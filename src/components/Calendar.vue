@@ -1,18 +1,14 @@
 <template>
   <div class="calendar">
-      <h2 v-text="today.format('MMMM YYYY')"></h2>
-      <table>
-          <thead>
-              <tr>
-                  <th v-for="i in 7" :key="i" v-text="day(i-1).format('ddd')"></th>
-              </tr>
-          </thead>
-          <tbody>
-              <tr v-for="w in 6" :key="w">
-                  <td v-for="d in 7" :key="d" v-text="day(d-1, w-1).format('D')"></td>
-              </tr>
-          </tbody>
-      </table>
+    <h2 v-text="today.format('MMMM YYYY')"></h2>
+
+    <div class="days">
+        <div v-for="i in 7" :key="i" v-text="day(i-1).format('ddd')" class="weekDay"></div>
+        <template v-for="w in 6">
+            <div v-for="d in 7" :key="w*7+d" v-text="day(d-1, w-1).format('D')" class="monthDay"></div>
+        </template>
+    </div>
+
   </div>
 </template>
 
@@ -42,8 +38,6 @@ export default {
         },
     },
     mounted() {
-        console.log(this.today.calendar());
-        console.log(this.startDate.calendar());
     }
 }
 </script>
