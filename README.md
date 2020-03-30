@@ -23,6 +23,14 @@
  - Manage Client
  - Platform Scripts
 
+ ### Userfull data to include in the future
+  - Basic Engagement Metrics
+    - Likes
+    - Comments
+    - Shares
+  - Instagram Engagement Metrics
+    - Saves
+
 ## Project setup
 ```
 npm install
