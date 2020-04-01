@@ -1,18 +1,10 @@
 <template>
   <div class="calendar">
-    <h2 class="title" v-text="today.format('MMMM YYYY')"></h2>
-
-    <div class="days">
-        <div v-for="i in 7" :key="i" v-text="day(i-1).format('ddd')" class="weekDay"></div>
+    <div class="calendar_days">
+        <div v-for="i in 7" :key="i" v-text="day(i-1).format('dd')[0]" class="calendar_weekDay"></div>
         <template v-for="w in 6">
             <div v-for="d in 7" :key="w*7+d">
-                <div class="monthDay" v-text="day(d-1, w-1).format('D')"></div>
-                <div class="event"
-                    v-for="event in dayEvents(day(d-1, w-1))"
-                    :key="event.id">
-                    <span v-text="event.title"></span>
-                    <span v-text="event.date.format('HH:mm')"></span>
-                </div>
+                <div class="calendar_monthDay" v-text="day(d-1, w-1).format('D')"></div>
             </div>
         </template>
     </div>

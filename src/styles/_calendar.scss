@@ -1,17 +1,17 @@
-
 .calendar {
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    .days {
+    height: min-content;
+    &_days {
         min-height: 0;
         width: 100%;
         flex-grow: 1;
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         grid-template-rows: min-content repeat(6, 1fr);
-        .weekDay, .monthDay {
-            text-align: center;
-        }
+    }
+    &_weekDay, &_monthDay {
+        text-align: center;
+        padding: .25em;
     }
 }
