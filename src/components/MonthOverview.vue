@@ -1,12 +1,9 @@
 <template>
-  <div class="calendar">
+  <div class="calendar-month">
     <div class="calendar_days">
         <div v-for="i in 7" :key="i" v-text="day(i-1).format('dd')[0]" class="calendar_weekDay"></div>
-        <template v-for="w in 6">
-            <div v-for="d in 7" :key="w*7+d">
-                <div class="calendar_monthDay" v-text="day(d-1, w-1).format('D')"></div>
-            </div>
-        </template>
+        <div v-for="d in nDays" :key="`day_${d}`" class="calendar_monthDay" v-text="day(d-1).format('D')">
+        </div>
     </div>
 
   </div>
@@ -16,7 +13,7 @@
 import moment from 'moment'
 
 export default {
-    name: 'Calendar',
+    name: 'MonthOverview',
     props: {
         today: {default: () => moment(Date.now())},
         events: {default: () => [] },

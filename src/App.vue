@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <BlatCalendar :events="events"/>
+    <BlatMonthOverview :events="events"/>
     <BlatAgenda :events="events"/>
   </div>
 </template>
 
 <script>
 import BlatAgenda from './components/Agenda'
-import BlatCalendar from './components/Calendar'
+import BlatMonthOverview from './components/MonthOverview'
 import moment from 'moment'
 
 export default {
   name: 'App',
   components: {
     BlatAgenda,
-    BlatCalendar,
+    BlatMonthOverview,
   },
   data() {
     return {
