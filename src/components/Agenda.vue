@@ -1,19 +1,23 @@
 <template>
   <div class="agenda">
-    <h2 class="title" v-text="today.format('MMMM YYYY')"></h2>
+    <h2 class="title agenda_title">Agenda</h2>
 
-    <dl v-for="i in 7" :key="i">
-        <dt class="agenda_date" v-if="dayEvents(day(i-1)).length">
-            <time v-text="day(i-1).format('D MMMM')"></time>
-        </dt>
-                        
-        <dd class="agenda_event"
-            v-for="event in dayEvents(day(i-1))"
-            :key="event.id">
-            <time class="agenda_event_time" v-text="event.date.format('HH:mm')"></time>
-            <span class="agenda_event_title" v-text="event.title"></span>
-        </dd>
-    </dl>
+    <ul class="agenda_list agenda_list-full">
+        <template v-for="i in 7">
+            <li class="agenda_dayListing" v-if="dayEvents(day(i-1)).length" :key="i">
+                <time v-text="day(i-1).format('D MMMM')" class="agenda_day"></time>
+                <ul class="agenda_list agenda_list-day">
+                    <li class="eventRow agenda_event"
+                        v-for="event in dayEvents(day(i-1))"
+                        :key="event.id">
+                        <time class="eventRow_time" v-text="event.date.format('HH:mm')"></time>
+                        <span class="eventRow_account">Account</span>
+                        <span class="eventRow_title" v-text="event.title"></span>
+                    </li>
+                </ul>
+            </li>
+        </template>
+    </ul>
   </div>
 </template>
 
