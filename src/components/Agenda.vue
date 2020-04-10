@@ -1,8 +1,8 @@
 <template>
-  <div class="agenda">
-    <h2 class="title agenda_title">Agenda</h2>
+  <div class="agenda panel">
+    <h2 class="title agenda_title panel_title panel_content">Agenda</h2>
 
-    <ul class="agenda_list agenda_list-full">
+    <ul class="agenda_list agenda_list-full panel_content">
         <template v-for="i in 7">
             <li class="agenda_dayListing" v-if="dayEvents(day(i-1)).length" :key="i">
                 <time v-text="day(i-1).format('D MMMM')" class="agenda_day"></time>

@@ -1,0 +1,19 @@
+.app {
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    overflow: hidden;
+    &_overviewPanel {
+        width: 20rem;
+        flex-shrink: 0;
+    }
+    &_agenda {
+        flex-shrink: 0;
+        flex-basis: 28rem;
+        background-color: $dark-sec-color;
+    }
+    &_eventDetails {
+        flex-basis: 50vw;
+        flex-grow: 1;
+    }
+}

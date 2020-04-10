@@ -11,7 +11,6 @@
 }
 
 @import './colors';
-@import './agenda';
 @import './calendar';
 
 html, body {
@@ -21,13 +20,9 @@ html, body {
     color: $light-color;
     font-size: 14px;
 }
-#app {
-    height: 100vh;
-    max-height: 100vh;
-    display: flex;
-    overflow: hidden;
-    // flex-direction: column;
-}
 
-@import './blocks/title';
+@import './blocks/agenda';
+@import './blocks/app';
 @import './blocks/eventRow';
+@import './blocks/panel';
+@import './blocks/title';

@@ -1,7 +1,11 @@
 <template>
-  <div id="app">
-    <BlatMonthOverview :events="events"/>
-    <BlatAgenda :events="events"/>
+  <div id="app" class="app">
+    <div class="app_overviewPanel panel">
+      <h2 class="title overviewPanel_title panel_title panel_content" v-text="today.format('D MMMM')"></h2>
+      <BlatMonthOverview :events="events" class="panel_content"/>
+    </div>
+    <BlatAgenda :events="events" class="app_agenda"/>
+    <div class="app_eventDetails"></div>
   </div>
 </template>
 
