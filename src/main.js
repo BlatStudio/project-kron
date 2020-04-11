@@ -18,5 +18,11 @@ new Vue({
     if( this.$electron ) {
       console.log('this has electron');
     }
+    if( this.$electron ) {
+      this.$electron.ipcRenderer.on('ping', (e, message) => {
+        console.log(message) // Prints 'whoooooooh!'
+        router.push({ path: '/', query: { plan: 'private' } })
+      })
+    }
   }
 }).$mount('#app')
