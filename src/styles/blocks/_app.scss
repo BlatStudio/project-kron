@@ -3,6 +3,7 @@
     max-height: 100vh;
     display: flex;
     overflow: hidden;
+    position: relative;
     &_overviewPanel {
         width: 20rem;
         flex-shrink: 0;
@@ -15,5 +16,14 @@
     &_eventDetails {
         flex-basis: 50vw;
         flex-grow: 1;
+    }
+    &_modal {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba($dark-sec-color, .95);
+        z-index: 10;
     }
 }

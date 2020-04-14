@@ -1,0 +1,21 @@
+.modal {
+    display: flex;
+    &_window {
+        margin: auto;
+        min-width: 35%;
+        min-height: 35%;
+        background-color: $light-color;
+        position: relative;
+        padding: 30px;
+        border-radius: 5px;
+    }
+    &_close {
+        display: block;
+        background-color: red;
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

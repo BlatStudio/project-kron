@@ -1,0 +1,60 @@
+.form {
+    &_input {
+        position: relative;
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+    &_inputLabel {
+        width: 100%;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        color: $dark-color;
+        font-size: .8em;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    &_inputString {
+        background-color: $light-sec-color;
+        border: none;
+        outline: none;
+        padding: calc(1.5em + 8px) 8px 8px 8px;
+        width: 100%;
+        color: $dark-color;
+        border-radius: 8px;
+        border: 2px solid transparent;
+        &:focus {
+            border-color: $dark-color;
+            background-color: $light-color;
+        }
+    }
+
+    &_button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: transparent;
+        border: 2px solid $dark-color;
+        border-radius: 5px;
+        height: 3rem;
+        min-width: 6rem;
+        color: $dark-color;
+        &-accept {
+            border-color: $dark-color;
+        }
+        &-inactive {
+            border-color: $light-sec-color;
+            color: $light-sec-color;
+        }
+        &-cancel {
+            border-color: transparent;
+        }
+    }
+
+    &_actions {
+        display: flex;
+        justify-content: space-between;
+    }
+}

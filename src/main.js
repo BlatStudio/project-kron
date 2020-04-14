@@ -16,12 +16,11 @@ new Vue({
   router,
   mounted() {
     if( this.$electron ) {
-      console.log('this has electron');
-    }
-    if( this.$electron ) {
       this.$electron.ipcRenderer.on('ping', (e, message) => {
         console.log(message) // Prints 'whoooooooh!'
-        router.push({ path: '/', query: { plan: 'private' } })
+        if( !this.$route.query.newPromo ) {
+          this.$router.push({ name: 'home', query: { newPromo: '1' } })
+        }
       })
     }
   }
